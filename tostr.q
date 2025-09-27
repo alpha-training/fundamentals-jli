@@ -1,0 +1,1 @@
+tostr:{$[0h~type x; .z.s each x; $[10h~abs type x; x; string x]]}
