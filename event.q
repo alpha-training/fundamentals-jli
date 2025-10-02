@@ -30,8 +30,7 @@ fire:{[event;arg] if[event in key handlers;handlers[event] @\: arg;];}
 .z.po:{[h] .event.fire[`.z.po; h]}
 
 
-As a suggestion for the future - it might be worth editing this code to allow it to handle multiple different events, not just `.z.po
-Here's what my code looks like for this:
+As a suggestion for the future - just so you don't have to fire each event individually consider something like this:
 
 
 \d .event			/ we are going to put our code in the .event namespace
