@@ -18,7 +18,8 @@ This is great work! My only suggestion is splitting this up into lines to make i
 
 handlers:(0#`)!()		
 
-addHandler:{[event;handler] if[not event in key event handlers; handlers[event]:()];
+addHandler:{[event;handler] 
+    if[not event in key event handlers; handlers[event]:()];
     handlers[event]:handlers[event],handler;
     }
 
