@@ -1,4 +1,4 @@
-\p 5010
+l\p 5010
 
 \d .u
 
@@ -6,7 +6,7 @@ COLS_DICT:()!()
 COLS_DICT[`trade]:`time`sym`size`price
 COLS_DICT[`quote]:`time`sym`bid`ask`bidSize`askSize
 
-upd1:{[t;h;x] neg[h](`upd;t;x)}
+upd1:{[t;h;x] neg[h](`upd;t;x)} /this is a pub function as its publishing to an rdb so should be pub1:{[t;data] neg[w[t]]@\:(`upd;t;data)}
 
 upd:{[t;x]
  if[type x;'"this must be a list of lists"];
@@ -22,3 +22,5 @@ sub:{[t] w[t]:distinct w[t],.z.w; -1 "Subscribed handle ",string[.z.w]," to ",st
 .z.pc:{w::w except'x; -1 "Handle ",string[x]," disconnected and cleaned up";}
 
 \d .
+
+/good just look at the upd1 comment it should be reading out of your dictionary of handles

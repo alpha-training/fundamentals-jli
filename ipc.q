@@ -20,3 +20,5 @@ disconnect:{[h].ipc.conns:update handle:0Ni from conns where handle=h}
 \d .
 
 .event.addHandler[`.z.pc;`.ipc.disconnect]
+
+/nicely done

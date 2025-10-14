@@ -11,3 +11,5 @@ genQuote:{N:1+rand 1000;value flip([]time:N#.z.p;sym:N?SYMS;bid:N?100f;bidSize:N
 .z.ts:{neg[h](`.u.upd;`trade;genTrade`);neg[h](`.u.upd;`quote;genQuote`);}
 
 \t 100
+
+/nicely done
