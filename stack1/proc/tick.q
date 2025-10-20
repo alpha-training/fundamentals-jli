@@ -1,4 +1,4 @@
-\p 5010
+l\p 5010
 
 \d .u
 
@@ -6,7 +6,7 @@ COLS_DICT:()!()
 COLS_DICT[`trade]:`time`sym`size`price
 COLS_DICT[`quote]:`time`sym`bid`ask`bidSize`askSize
 
-upd1:{[t;h;x] neg[h](`upd;t;x)}
+upd1:{[t;h;x] neg[h](`upd;t;x)} /this is a pub function as its publishing to an rdb so should be pub1:{[t;data] neg[w[t]]@\:(`upd;t;data)}
 
 upd:{[t;x]
  if[type x;'"this must be a list of lists"];
@@ -28,3 +28,5 @@ endofday:{[d] d:d-1D;hs: distinct raze value w;neg[hs]@\:(`.u.end;d);}
 
 .cron.add[`.u.endofday;.z.p+00:00:30;00:01:00]
 \d .
+
+/good just look at the upd1 comment it should be reading out of your dictionary of handles
