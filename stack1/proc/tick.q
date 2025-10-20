@@ -17,8 +17,14 @@ upd:{[t;x]
 
 w:(0#`)!()
 
-sub:{[t] w[t]:distinct w[t],.z.w; -1 "Subscribed handle ",string[.z.w]," to ",string t;}
+sub:{[t] if[null t;:.z.s each key COLS_DICT];0N!t;w[t]:distinct w[t],.z.w;-1 "Subscribed handle ",string[.z.w]," to table ",string t;}
 
 .z.pc:{w::w except'x; -1 "Handle ",string[x]," disconnected and cleaned up";}
 
+endofday:{[d] d:d-1D;hs: distinct raze value w;neg[hs]@\:(`.u.end;d);}
+
+\l lib/event.q
+\l lib/cron.q
+
+.cron.add[`.u.endofday;.z.p+00:00:30;00:01:00]
 \d .
