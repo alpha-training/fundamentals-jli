@@ -14,8 +14,7 @@ upd:upsert
 
 savetable:{[d;t] 
 	-1"savetable called date=", string [d]," table=", string [t]," rows=", string count value t;
-	system "mkdir -p data/", string d;
-    (`$(":data/", string [d], "/", string t)) set value t;
+    (`$(":data/", string [d], "/", string [t],"/")) set .Q.en[`:data;value t];
 	t set 0#value t;
     -1 "saved and cleared ",string [t]," for date=",string d;
 	}
