@@ -1,4 +1,4 @@
-\l lib/event.q
+/ \l lib/event.q
 
 \d .cron
 
